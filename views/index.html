@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="us">
+<head>
+    <title>Title of the document</title>
+</head>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<body>
+<h1>Exercise tracker</h1>
+<form action="/api/exercise/new-user" method="POST" style="align-content: center;">
+    <h3>Create a New User</h3>
+    <label>User Name*:</label><br/> <input type="text" name="username" required /><br/><br/>
+    <input type="submit" value="Submit" />
+</form>
+<form action="/api/exercise/add" method="POST" style="align-content: center;">
+    <h3>Add exercise</h3>
+    <label>User Id*:</label><br/> <input type="text" name="userId" required /><br/><br/>
+    <label>Description*:</label><br/> <input type="text" name="description" required /><br/><br/>
+    <label>Duration* (mins.):</label><br/> <input type="number" name="duration" required /><br/><br/>
+    <label>Date (yyyy-mm-dd):</label><br/> <input type="date" name="date" /><br/><br/>
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
