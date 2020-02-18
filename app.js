@@ -92,7 +92,7 @@ app.post('/api/exercise/add', (req, res) => {
 
 })
 
-//getting a users a users full info from database with query url
+//getting a users full info from database with query url
 app.get('/api/exercise/log', (req, res) => {
     if (!req.query.userId) return res.send('unknown userId')
     User.find({_id: req.query.userId}, (err, data) => {
@@ -118,6 +118,7 @@ app.get('/api/exercise/log', (req, res) => {
                         dataEdit["from"] = date.toLocaleDateString("en-US");
                         dataEdit["log"] = dataEdit.log.filter(exercise =>
                             new Date(exercise.date).getTime() >= date.getTime());
+                        dataEdit["count"] = dataEdit["log"].length;
                         break;
                     }else {
                         break;
@@ -128,6 +129,7 @@ app.get('/api/exercise/log', (req, res) => {
                         dataEdit["to"] = date.toLocaleDateString("en-US");
                         dataEdit["log"] = dataEdit.log.filter(exercise =>
                             new Date(exercise.date).getTime() <= date.getTime());
+                        dataEdit["count"] = dataEdit["log"].length;
                         break
                     } else {
                         break;
